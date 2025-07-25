@@ -1,0 +1,15 @@
+{
+  "name": "@geolijn/geodata-core",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "peerDependencies": {
+    "@angular/common": ">=17",
+    "@angular/core": ">=17"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}
