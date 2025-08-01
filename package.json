@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test:geodata-core": "jest --config libs/geodata-core/jest.config.js --coverage"
+    "test:geodata-core": "jest --config libs/geodata-core/jest.config.js --coverage",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -29,8 +30,16 @@
     "@angular/compiler-cli": "^17.3.0",
     "@ngneat/spectator": "^18.0.2",
     "@types/jest": "^30.0.0",
+    "angular-eslint": "20.1.1",
+    "eslint": "^9.29.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.3",
+    "eslint-plugin-unused-imports": "^4.1.4",
     "jest-preset-angular": "^14.6.1",
     "ng-packagr": "^17.3.0",
-    "typescript": "~5.4.2"
+    "prettier": "^3.6.2",
+    "prettier-eslint": "^16.4.2",
+    "typescript": "~5.4.2",
+    "typescript-eslint": "8.34.1"
   }
 }

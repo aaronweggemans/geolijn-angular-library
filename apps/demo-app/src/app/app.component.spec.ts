@@ -1,5 +1,5 @@
 import { Spectator, createComponentFactory } from '@ngneat/spectator/jest';
-import {AppComponent} from "./app.component";
+import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   let spectator: Spectator<AppComponent>;
