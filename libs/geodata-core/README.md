@@ -30,6 +30,9 @@ Voor het voorbereiden van geodata voor opslag, visualisatie of verdere analyse.
 
 ## 🔧 Functionaliteiten in één oogopslag
 1. Centroidberekening → vind het middelpunt van een polygoon
+2. Ophalen van land informatie via de get country functies
+3. Berekening om te kijken of een punt zich in een polygoon bevind
+4. Coordinaten switchen van latitude naar longitude of andersom
 
 ## 🎯 Waarom @geolijn/geodata-core?
 Deze library biedt een lichte en toegankelijke set functies die je vaak nodig hebt bij het werken met geodata, zonder zware GIS-frameworks te installeren. Het is:
