@@ -6,9 +6,7 @@
     "strict": true,
     "noImplicitOverride": true,
     "paths": {
-      "geodata-core": [
-        "./dist/geodata-core"
-      ]
+      "geodata-core": ["./dist/geodata-core"]
     },
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -25,10 +23,7 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
+    "lib": ["ES2022", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
