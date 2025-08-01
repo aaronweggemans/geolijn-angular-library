@@ -1,25 +1,43 @@
-# Geolijn Geodata Core
+# 🌍 Geolijn Geodata Core
+
+@geolijn/geodata-core is een Angular library die zich richt op geodata-verwerking en analyse. De library biedt hulpmiddelen voor het werken met polygonen, lijnen en punten, waardoor je eenvoudig ruimtelijke berekeningen kunt uitvoeren binnen je Angular-projecten.
+
+Deze library is ontworpen als kernmodule voor geografische toepassingen – ideaal voor projecten waar je geometrieën wilt analyseren, visualiseren of transformeren.
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
 
-## Code scaffolding
+## ✨ Wat doet deze library?
+De library bevat een set van geometrische analysetools die veelvoorkomende ruimtelijke bewerkingen eenvoudig maken. Denk hierbij aan:
 
-Run `ng generate component component-name --project geodata-core` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project geodata-core`.
+Het berekenen van kenmerken van geometrieën zoals het centroid, de oppervlakte en de perimeter van een polygoon.
 
-> Note: Don't forget to add `--project geodata-core` or else it will be added to the default project in your `angular.json` file.
+Het uitvoeren van afstandsbepalingen tussen punten, bijvoorbeeld met de Haversine-formule voor nauwkeurige afstanden op basis van geografische coördinaten.
 
-## Build
+Het genereren van afgeleide geometrieën, zoals een buffer (een polygoon uitbreiden met een bepaalde afstand) of het bepalen van de bounding box van een geometrie of collectie geometrieën.
 
-Run `ng build geodata-core` to build the project. The build artifacts will be stored in the `dist/` directory.
+Het analyseren van ruimtelijke relaties zoals intersecties of overlaps (bijvoorbeeld controleren of twee polygonen elkaar snijden).
 
-## Publishing
+Het vereenvoudigen van complexe geometrieën met algoritmes zoals Douglas-Peucker, zodat je lichtere en snellere geometrieën krijgt voor visualisatie of opslag.
 
-After building your library with `ng build geodata-core`, go to the dist folder `cd dist/geodata-core` and run `npm publish`.
+Kortom: met deze library kun je ruimtelijke analyse en geodata-transformatie uitvoeren zonder externe GIS-software.
 
-## Running unit tests
+## ✅ Wanneer gebruik je deze library?
+Als je polygonen, lijnen of punten wilt bewerken of analyseren in Angular.
 
-Run `ng test geodata-core` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Bij toepassingen waar je kaartvisualisaties hebt (bijvoorbeeld met Leaflet of OpenLayers) en extra ruimtelijke logica nodig is.
 
-## Further help
+Voor het voorbereiden van geodata voor opslag, visualisatie of verdere analyse.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## 🔧 Functionaliteiten in één oogopslag
+1. Centroidberekening → vind het middelpunt van een polygoon
+2. Ophalen van land informatie via de get country functies
+3. Berekening om te kijken of een punt zich in een polygoon bevind
+4. Coordinaten switchen van latitude naar longitude of andersom
+
+## 🎯 Waarom @geolijn/geodata-core?
+Deze library biedt een lichte en toegankelijke set functies die je vaak nodig hebt bij het werken met geodata, zonder zware GIS-frameworks te installeren. Het is:
+1. ✅ Specifiek voor Angular → eenvoudig te integreren in je app
+2. ✅ Modulair → gebruik alleen wat je nodig hebt
+3. ✅ Ideaal voor ruimtelijke analyse → polygonen, lijnen en punten
+
+Wil je dat ik hier nog een voorbeeld van gebruik toevoeg (bijvoorbeeld hoe je het centroid van een polygoon berekent in Angular)? Of wil je hem puur als beschrijving houden zonder codevoorbeelden?

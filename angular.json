@@ -5,21 +5,21 @@
   "projects": {
     "geodata-core": {
       "projectType": "library",
-      "root": "projects/geodata-core",
-      "sourceRoot": "projects/geodata-core/src",
+      "root": "libs/geodata-core",
+      "sourceRoot": "libs/geodata-core/src",
       "prefix": "geolijn",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/geodata-core/ng-package.json"
+            "project": "libs/geodata-core/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/geodata-core/tsconfig.lib.prod.json"
+              "tsConfig": "libs/geodata-core/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/geodata-core/tsconfig.lib.json"
+              "tsConfig": "libs/geodata-core/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,7 +27,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/geodata-core/tsconfig.spec.json",
+            "tsConfig": "libs/geodata-core/tsconfig.spec.json",
             "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
