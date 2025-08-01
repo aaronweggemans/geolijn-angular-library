@@ -41,35 +41,35 @@ export function getRandomCountry(): Feature {
   return features[randomIndex];
 }
 
-export type Countries = {
-  type: string
-  name: string
-  crs: Crs
-  features: Feature[]
+export interface Countries {
+  type: string;
+  name: string;
+  crs: Crs;
+  features: Feature[];
 }
 
-export type Crs = {
-  type: string
-  properties: Properties
+export interface Crs {
+  type: string;
+  properties: Properties;
 }
 
-export type Properties = {
-  name: string
+export interface Properties {
+  name: string;
 }
 
-export type Feature = {
-  type: string
-  properties: Properties2
-  geometry: Geometry
+export interface Feature {
+  type: string;
+  properties: Properties2;
+  geometry: Geometry;
 }
 
-export type Properties2 = {
-  name: string
-  "ISO3166-1-Alpha-3": string
-  "ISO3166-1-Alpha-2": string
+export interface Properties2 {
+  name: string;
+  'ISO3166-1-Alpha-3': string;
+  'ISO3166-1-Alpha-2': string;
 }
 
-export type Geometry = {
-  type: string
-  coordinates: number[][][]
+export interface Geometry {
+  type: string;
+  coordinates: number[][][];
 }

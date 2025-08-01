@@ -1,4 +1,10 @@
-import {Coordinaten, is2DPolygon, isMultipolygon, isPoint, isPolygon} from "../type-helper";
+import {
+  Coordinaten,
+  is2DPolygon,
+  isMultipolygon,
+  isPoint,
+  isPolygon,
+} from '../type-helper';
 
 /**
  * Deze functie draait altijd de coordinaten om in een array van coordinaten stelsel.
@@ -10,24 +16,30 @@ import {Coordinaten, is2DPolygon, isMultipolygon, isPoint, isPolygon} from "../t
  * // [5.34657, 51.83206]
  * ```
  */
-export function latitudeLongitudeCasting(coordinaten: Coordinaten): Coordinaten {
-  if(isPoint(coordinaten)) {
+export function latitudeLongitudeCasting(
+  coordinaten: Coordinaten
+): Coordinaten {
+  if (isPoint(coordinaten)) {
     return switchCoordinates(coordinaten);
   }
 
-  if(is2DPolygon(coordinaten)) {
+  if (is2DPolygon(coordinaten)) {
     return coordinaten.map(switchCoordinates);
   }
 
-  if(isPolygon(coordinaten)) {
-    return coordinaten.map((coordinaat) => coordinaat.map(switchCoordinates));
+  if (isPolygon(coordinaten)) {
+    return coordinaten.map(coordinaat => coordinaat.map(switchCoordinates));
   }
 
-  if(isMultipolygon(coordinaten)) {
-    return coordinaten.map((coordinaat) => coordinaat.map((nestInCoordinaat) => nestInCoordinaat.map(switchCoordinates)));
+  if (isMultipolygon(coordinaten)) {
+    return coordinaten.map(coordinaat =>
+      coordinaat.map(nestInCoordinaat =>
+        nestInCoordinaat.map(switchCoordinates)
+      )
+    );
   }
 
-  if(Array.isArray(coordinaten)) {
+  if (Array.isArray(coordinaten)) {
     return [];
   }
 

@@ -24,10 +24,8 @@ export function isInsidePolygon(punt: number[], polygoon: number[][]): boolean {
     const [xj, yj] = following;
 
     const intersect =
-      (yi > y) !== (yj > y) &&
-      x < ((xj - xi) * (y - yi)) / (yj - yi) + xi;
+      yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi;
 
     return intersect ? !inside : inside;
   }, false);
 }
-

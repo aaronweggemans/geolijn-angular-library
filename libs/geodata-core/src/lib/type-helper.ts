@@ -11,7 +11,11 @@ export function isPoint(coords: Coordinaten): coords is number[] {
  * @param coords
  */
 export function is2DPolygon(coords: Coordinaten): coords is number[][] {
-  return Array.isArray(coords) && Array.isArray(coords[0]) && typeof coords[0][0] === 'number';
+  return (
+    Array.isArray(coords) &&
+    Array.isArray(coords[0]) &&
+    typeof coords[0][0] === 'number'
+  );
 }
 /**
  * Check of de array een 3D array is (Polygon)
