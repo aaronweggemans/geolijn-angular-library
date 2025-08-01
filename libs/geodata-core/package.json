@@ -2,7 +2,8 @@
   "name": "@geolijn/geodata-core",
   "version": "1.0.0",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "build": "ng build"
   },
   "peerDependencies": {
     "@angular/common": ">=17",
