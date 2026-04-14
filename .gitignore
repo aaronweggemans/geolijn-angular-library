@@ -43,3 +43,6 @@ Thumbs.db
 
 # Force to remove all coverage directories from the libraries
 libs/**/coverage/
+
+*storybook.log
+storybook-static

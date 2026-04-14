@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "core:storybook": "ng run geodata-core:storybook",
+    "core:build": "ng run geodata-core:build",
+    "componenten:storybook": "ng run geodata-generieke-componenten:storybook",
+    "componenten:build": "ng run geodata-generieke-componenten:build",
     "start": "ng serve",
     "test": "jest --projects libs/*",
     "build": "ng build",
@@ -40,6 +44,15 @@
     "prettier": "^3.6.2",
     "prettier-eslint": "^16.4.2",
     "typescript": "~5.4.2",
-    "typescript-eslint": "8.34.1"
+    "typescript-eslint": "8.34.1",
+    "storybook": "^10.3.5",
+    "@storybook/angular": "^10.3.5",
+    "@storybook/addon-a11y": "^10.3.5",
+    "@storybook/addon-docs": "^10.3.5",
+    "@storybook/addon-onboarding": "^10.3.5",
+    "@angular-devkit/architect": "^0.1802.14",
+    "@angular-devkit/core": "^18.2.14",
+    "@compodoc/compodoc": "^1.2.1",
+    "eslint-plugin-storybook": "^10.3.5"
   }
 }

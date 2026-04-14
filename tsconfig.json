@@ -6,7 +6,12 @@
     "strict": true,
     "noImplicitOverride": true,
     "paths": {
-      "geodata-core": ["./dist/geodata-core"]
+      "geodata-core": [
+        "./dist/geodata-core"
+      ],
+      "geodata-generieke-componenten": [
+        "./dist/geodata-generieke-componenten",
+      ]
     },
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -17,7 +22,7 @@
     "sourceMap": true,
     "declaration": false,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
