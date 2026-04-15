@@ -36,23 +36,23 @@
         }
       }
     },
-    "geodata-generieke-componenten": {
+    "generieke-componenten": {
       "projectType": "library",
-      "root": "libs/geodata-generieke-componenten",
-      "sourceRoot": "libs/geodata-generieke-componenten/src",
+      "root": "libs/generieke-componenten",
+      "sourceRoot": "libs/generieke-componenten/src",
       "prefix": "geolijn",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "libs/geodata-generieke-componenten/ng-package.json"
+            "project": "libs/generieke-componenten/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/geodata-generieke-componenten/tsconfig.lib.prod.json"
+              "tsConfig": "libs/generieke-componenten/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "libs/geodata-generieke-componenten/tsconfig.lib.json"
+              "tsConfig": "libs/generieke-componenten/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -60,7 +60,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "libs/geodata-generieke-componenten/tsconfig.spec.json",
+            "tsConfig": "libs/generieke-componenten/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"

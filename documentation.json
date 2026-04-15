@@ -251,7 +251,7 @@
         {
             "name": "GeolijnTestComponent",
             "id": "component-GeolijnTestComponent-d0fb3cea911fc9cc331fd149ff0b79982c66dc2d496fa462f569a4994a4e0397f6ac23ebea0c6657b1374e4a51a002093eac2c34918ea2a1b7d70fe44b290dbc",
-            "file": "libs/geodata-generieke-componenten/src/lib/test-component/test-component.ts",
+            "file": "libs/generieke-componenten/src/lib/test-component/test-component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1443,7 +1443,7 @@
                 "status": "low"
             },
             {
-                "filePath": "libs/geodata-generieke-componenten/src/lib/test-component/test-component.ts",
+                "filePath": "libs/generieke-componenten/src/lib/test-component/test-component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "GeolijnTestComponent",
