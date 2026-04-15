@@ -1,0 +1,19 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+
+import * as LatitudeLongitudeCasting from './latitude-longitude-casting.stories';
+
+<Meta of={LatitudeLongitudeCasting} />
+
+# Casting van coordinaten
+
+Deze functie draait altijd de coordinaten om in een array van coordinaten stelsel. Eigenlijk switched het je
+coordinaten van of latitude naar longitude, of longitude naar latitude.
+
+De functie ondersteund dit voor punten. 2Dpolygonen, polygonen en multipolygonen. De functie checkt eerst of het
+een punt is, daarna of het een 2D polygon is, daarna of het een polygon is en als laatste of het een multipolygon is.
+
+```typescript
+const westbetuwe: number[] = [51.83206, 5.34657];
+const coordinaten: Coordinaten = latitudeLongitudeCasting(westbetuwe);
+// [5.34657, 51.83206]
+```

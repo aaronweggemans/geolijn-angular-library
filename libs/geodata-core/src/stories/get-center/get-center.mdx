@@ -1,0 +1,39 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+
+import * as GetCenterStories from './get-center.stories';
+
+<Meta of={GetCenterStories} />
+
+# Bepaal het centrum van een (multi)polygoon
+
+De functie `getCenter` berekent het geometrische centrum van een polygon of multipolygon op basis van coördinaten. Het
+resultaat is één centraal punt dat het geheel vertegenwoordigt. De functie ondersteunt:
+1. Enkelvoudige polygonen
+2. Polygonen met meerdere ringen (bijv. met “holes” / enclaves)
+3. Multipolygonen (meerdere polygonen)
+
+De functie retouneert een array met de coördinaten van het centrum, in de vorm `[longitude, latitude]` of
+`[latitude, longitude]`. Afhankelijk van de gebruikte coördinatenvolgorde in de input.
+
+```typescript
+import { Component, Input, OnChanges } from '@angular/core';
+import { getCenter } from '@geolijn/geodata-core';
+
+@Component({
+  selector: 'app-component',
+  template: `
+    <div class="w-100">
+      <p>De latitude: {{ center[0] }}</p>
+      <p>De longitude: {{ center[1] }}</p>
+    </div>
+  `,
+})
+export class AppComponent {
+  protected readonly center: [number, number] = getCenter([
+    [54.0, 3.0],
+    [54.0, 8.0],
+    [50.0, 8.0],
+    [50.0, 3.0],
+  ];
+}
+```

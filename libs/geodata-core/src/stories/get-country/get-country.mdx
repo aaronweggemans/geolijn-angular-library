@@ -1,0 +1,29 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+
+import * as GetCountryStories from './get-country.stories';
+
+<Meta of={GetCountryStories} />
+
+# Get Country functies
+
+De Get Country pagina biedt toegang tot landgegevens in GeoJSON-formaat. Je kunt: Alle landen ophalen als volledige
+dataset, alleen de features (landen) ophalen of eén willekeurig land selecteren. Deze functies zijn bedoeld als
+eenvoudige data-toegang voor kaarten en visualisaties voor op een kaart.
+
+## getGeoJsonCountries
+
+Geeft de volledige lijst van landen terug in GeoJSON-formaat. De data is afkomstig uit een statisch JSON-bestand en
+wordt geretourneerdals een object van het type `Countries`. Dit GeoJSON-object bevat onderandere metadata en een
+`features`-lijst met individuele landen.
+
+## getAllFeaturesOfCountries
+
+Haalt alle individuele land-features op uit het GeoJSON-bestand. Elk land wordt weergegeven als een `Feature`-object
+binnen de `features`-array van het GeoJSON-object. Deze functie retourneert enkel die array, zonder overige metadata.
+
+## getRandomCountry
+
+Haalt één willekeurig land op uit de lijst van landen (GeoJSON).De functie kiest willekeurig één `Feature`-object
+uit de lijst van landenmet behulp van `Math.random()` en retourneert dat object.Het resultaat is een enkel land in
+GeoJSON-featureformaat.
+

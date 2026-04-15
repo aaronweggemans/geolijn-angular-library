@@ -11,9 +11,9 @@
     "watch": "ng build --watch --configuration development",
     "lint": "ng lint"
   },
-  "engines" : {
-    "node" : ">=24",
-    "npm" : ">=11"
+  "engines": {
+    "node": ">=24",
+    "npm": ">=11"
   },
   "private": true,
   "dependencies": {
@@ -31,30 +31,31 @@
     "zone.js": "~0.14.3"
   },
   "devDependencies": {
+    "@angular-devkit/architect": "^0.1802.14",
     "@angular-devkit/build-angular": "^18.2.21",
+    "@angular-devkit/core": "^18.2.14",
     "@angular/cli": "^18.2.21",
     "@angular/compiler-cli": "^18.2.14",
+    "@compodoc/compodoc": "^1.2.1",
     "@ngneat/spectator": "^18.0.2",
+    "@storybook/addon-a11y": "^10.3.5",
+    "@storybook/addon-docs": "^10.3.5",
+    "@storybook/addon-onboarding": "^10.3.5",
+    "@storybook/angular": "^10.3.5",
     "@types/jest": "^30.0.0",
+    "@types/mdx": "^2.0.13",
     "angular-eslint": "20.1.1",
     "eslint": "^9.29.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.3",
+    "eslint-plugin-storybook": "^10.3.5",
     "eslint-plugin-unused-imports": "^4.1.4",
     "jest-preset-angular": "^14.6.1",
     "ng-packagr": "^18.2.1",
     "prettier": "^3.6.2",
     "prettier-eslint": "^16.4.2",
-    "typescript": "~5.4.2",
-    "typescript-eslint": "8.34.1",
     "storybook": "^10.3.5",
-    "@storybook/angular": "^10.3.5",
-    "@storybook/addon-a11y": "^10.3.5",
-    "@storybook/addon-docs": "^10.3.5",
-    "@storybook/addon-onboarding": "^10.3.5",
-    "@angular-devkit/architect": "^0.1802.14",
-    "@angular-devkit/core": "^18.2.14",
-    "@compodoc/compodoc": "^1.2.1",
-    "eslint-plugin-storybook": "^10.3.5"
+    "typescript": "~5.4.2",
+    "typescript-eslint": "8.34.1"
   }
 }

@@ -1,10 +1,10 @@
 {
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
-    "types": ["node"],
+    "types": ["node", "mdx"],
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
-    "moduleResolution": "bundler"
+    "moduleResolution": "bundler",
   },
   "exclude": ["../../../libs/**/src/test.ts", "../../../libs/**/src/**/*.spec.ts"],
   "include": ["../../../libs/**/src/**/*.stories.*",

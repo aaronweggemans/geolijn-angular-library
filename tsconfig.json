@@ -10,7 +10,7 @@
         "./dist/geodata-core"
       ],
       "geodata-generieke-componenten": [
-        "./dist/geodata-generieke-componenten",
+        "./dist/geodata-generieke-componenten"
       ]
     },
     "noPropertyAccessFromIndexSignature": true,
