@@ -1,17 +1,19 @@
 {
   "name": "geolijn-angular-library",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "core:storybook": "ng run geodata-core:storybook",
-    "core:build": "ng run geodata-core:build",
-    "componenten:storybook": "ng run geodata-generieke-componenten:storybook",
-    "componenten:build": "ng run geodata-generieke-componenten:build",
+    "storybook": "ng run storybook:storybook",
+    "build-storybook": "ng run storybook:build-storybook",
     "start": "ng serve",
     "test": "jest --projects libs/*",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "lint": "ng lint"
+  },
+  "engines" : {
+    "node" : ">=24",
+    "npm" : ">=11"
   },
   "private": true,
   "dependencies": {

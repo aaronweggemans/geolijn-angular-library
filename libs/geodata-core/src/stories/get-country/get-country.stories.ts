@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { WrapperComponent } from "../wrapper-component";
+import { WrapperComponent } from '../wrapper-component';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta<WrapperComponent> = {
-  title: 'Example/Get Country',
+  title: 'Geodata Core/Get Country',
   component: WrapperComponent,
   tags: ['autodocs'],
 };

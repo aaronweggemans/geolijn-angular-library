@@ -3,7 +3,7 @@ import { WrapperComponent } from '../wrapper-component';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta<WrapperComponent> = {
-  title: 'Example/Latitude And Longitude Casting',
+  title: 'Geodata Core/Latitude And Longitude Casting',
   component: WrapperComponent,
   tags: ['autodocs'],
 };

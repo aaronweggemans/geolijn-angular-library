@@ -1,0 +1,12 @@
+// This tsconfig is used by Compodoc to generate the documentation for the project.
+// If Compodoc is not used, this file can be deleted.
+{
+  "extends": "./tsconfig.json",
+  // Exclude all files that are not needed for documentation generation.
+  "exclude": ["../../../libs/**/src/test.ts", "../../../libs/**/src/**/*.spec.ts", "../../../libs/**/src/**/*.stories.ts"],
+  // Please make sure to include all files from which Compodoc should generate documentation.
+  "include": ["../../../libs/**/src/**/*"],
+  "files": [
+    "./typings.d.ts"
+  ]
+}

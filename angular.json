@@ -33,36 +33,6 @@
               "zone.js/testing"
             ]
           }
-        },
-        "storybook": {
-          "builder": "@storybook/angular:start-storybook",
-          "options": {
-            "configDir": "libs/geodata-core/.storybook",
-            "browserTarget": "geodata-core:build",
-            "compodoc": true,
-            "compodocArgs": [
-              "-e",
-              "json",
-              "-d",
-              "libs/geodata-core"
-            ],
-            "port": 6006
-          }
-        },
-        "build-storybook": {
-          "builder": "@storybook/angular:build-storybook",
-          "options": {
-            "configDir": "libs/geodata-core/.storybook",
-            "browserTarget": "geodata-core:build",
-            "compodoc": true,
-            "compodocArgs": [
-              "-e",
-              "json",
-              "-d",
-              "libs/geodata-core"
-            ],
-            "outputDir": "dist/storybook/geodata-core"
-          }
         }
       }
     },
@@ -96,35 +66,80 @@
               "zone.js/testing"
             ]
           }
+        }
+      }
+    },
+    "storybook": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/storybook",
+      "sourceRoot": "projects/storybook/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/storybook",
+            "index": "projects/storybook/src/index.html",
+            "browser": "projects/storybook/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/storybook/tsconfig.app.json",
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "storybook:build:production"
+            },
+            "development": {
+              "buildTarget": "storybook:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
         },
         "storybook": {
           "builder": "@storybook/angular:start-storybook",
           "options": {
-            "configDir": "libs/geodata-generieke-componenten/.storybook",
-            "browserTarget": "geodata-generieke-componenten:build",
-            "compodoc": true,
-            "compodocArgs": [
-              "-e",
-              "json",
-              "-d",
-              "libs/geodata-generieke-componenten"
-            ],
+            "configDir": "projects/storybook/.storybook",
+            "browserTarget": "storybook:build",
+            "compodoc": false,
             "port": 6006
           }
         },
         "build-storybook": {
           "builder": "@storybook/angular:build-storybook",
           "options": {
-            "configDir": "libs/geodata-generieke-componenten/.storybook",
-            "browserTarget": "geodata-generieke-componenten:build",
-            "compodoc": true,
-            "compodocArgs": [
-              "-e",
-              "json",
-              "-d",
-              "libs/geodata-generieke-componenten"
-            ],
-            "outputDir": "dist/storybook/geodata-generieke-componenten"
+            "configDir": "projects/storybook/.storybook",
+            "browserTarget": "storybook:build",
+            "compodoc": false,
+            "outputDir": "dist/storybook/storybook"
           }
         }
       }

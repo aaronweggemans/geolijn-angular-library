@@ -3,7 +3,7 @@ import { GeolijnTestComponent } from '../../lib/test-component/test-component';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta<GeolijnTestComponent> = {
-  title: 'Example/Test Component',
+  title: 'Generieke Componenten/Test Component',
   component: GeolijnTestComponent,
   tags: ['autodocs'],
 };
