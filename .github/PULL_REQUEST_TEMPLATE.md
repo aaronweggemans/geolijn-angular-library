@@ -19,7 +19,7 @@ Voordat je deze PR aanmaakt, check of je onderstaande punten hebt afgerond:
 
 ## 📝 Documentatie
 - [ ] README of docs zijn geüpdatet met nieuwe functionaliteit
-- [ ] In de demo-app is de voorbeeldcode bijgewerkt
+- [ ] Storybook is bijgewerkt met voorbeeldcode
 
 ## 🔍 Kwaliteitscontrole
 - [ ] `npm run lint` geeft geen fouten

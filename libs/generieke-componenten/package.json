@@ -1,5 +1,5 @@
 {
-  "name": "@geolijn/geodata-core",
+  "name": "@geolijn/generieke-componenten",
   "version": "1.0.0",
   "scripts": {
     "test": "jest --coverage",

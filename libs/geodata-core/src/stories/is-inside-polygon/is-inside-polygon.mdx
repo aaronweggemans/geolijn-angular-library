@@ -1,0 +1,27 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+
+import * as IsInsidePolygonStories from './is-inside-polygon.stories';
+
+<Meta of={IsInsidePolygonStories} />
+
+# Zit binnen een vorm
+
+Deze functie bepaalt of een gegeven punt zich binnen een polygoon bevindt. Dit wordt gedaan op basis van
+latitude en longitude.
+
+```typescript
+const westbetuwe: number[] = [51.832066, 5.346578];
+const netherlands: number[][] = [
+  [53.707785, 3.454509],
+  [53.707785, 7.596039],
+  [50.473985, 6.996883],
+  [50.192177, 2.834330]
+];
+
+const isInNederland: boolean = isInsidePolygon(westbetuwe, netherlands);
+console.log(isInNederland);
+// Resultaat: true (het punt ligt binnen de polygon)
+```
+
+<Canvas of={IsInsidePolygonStories.Voorbeeld} />
+

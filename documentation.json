@@ -1,0 +1,1456 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "Countries",
+            "id": "interface-Countries-810a51f482e2bff9fbff67f397a353a29afd762d59d83ba583de24d4f12b4009612b0cf5b37af034336c8c144d96f019a64b50ad2000ea597727a5d1c2d375c9",
+            "file": "libs/geodata-core/src/lib/get-country/get-country.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import plainCountryList from '../../assets/countries.json';\n\n/**\n * Geeft de volledige lijst van landen terug in GeoJSON-formaat.\n *\n * De data is afkomstig uit een statisch JSON-bestand en wordt geretourneerd\n * als een object van het type `Countries`. Dit GeoJSON-object bevat onder\n * andere metadata en een `features`-lijst met individuele landen.\n *\n * @returns {Countries} Een GeoJSON-verzameling van alle landen.\n */\nexport function getGeoJsonCountries(): Countries {\n  return plainCountryList as Countries;\n}\n\n/**\n * Haalt alle individuele land-features op uit het GeoJSON-bestand.\n *\n * Elk land wordt weergegeven als een `Feature`-object binnen de\n * `features`-array van het GeoJSON-object. Deze functie retourneert\n * enkel die array, zonder overige metadata.\n *\n * @returns {Feature[]} Een lijst van alle landen als GeoJSON-features.\n */\nexport function getAllFeaturesOfCountries(): Feature[] {\n  return (plainCountryList as Countries).features;\n}\n\n/**\n * Haalt één willekeurig land op uit de lijst van landen (GeoJSON).\n *\n * De functie kiest willekeurig één `Feature`-object uit de lijst van landen\n * met behulp van `Math.random()` en retourneert dat object.\n * Het resultaat is een enkel land in GeoJSON-featureformaat.\n *\n * @returns {Feature} Een willekeurig gekozen land als GeoJSON-feature.\n */\nexport function getRandomCountry(): Feature {\n  const features: Feature[] = (plainCountryList as Countries).features;\n  const randomIndex: number = Math.floor(Math.random() * features.length);\n  return features[randomIndex];\n}\n\nexport interface Countries {\n  type: string;\n  name: string;\n  crs: Crs;\n  features: Feature[];\n}\n\nexport interface Crs {\n  type: string;\n  properties: Properties;\n}\n\nexport interface Properties {\n  name: string;\n}\n\nexport interface Feature {\n  type: string;\n  properties: Properties2;\n  geometry: Geometry;\n}\n\nexport interface Properties2 {\n  name: string;\n  'ISO3166-1-Alpha-3': string;\n  'ISO3166-1-Alpha-2': string;\n}\n\nexport interface Geometry {\n  type: string;\n  coordinates: number[][][];\n}\n",
+            "properties": [
+                {
+                    "name": "crs",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Crs",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 47
+                },
+                {
+                    "name": "features",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Feature[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 48
+                },
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 46
+                },
+                {
+                    "name": "type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 45
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "Crs",
+            "id": "interface-Crs-810a51f482e2bff9fbff67f397a353a29afd762d59d83ba583de24d4f12b4009612b0cf5b37af034336c8c144d96f019a64b50ad2000ea597727a5d1c2d375c9",
+            "file": "libs/geodata-core/src/lib/get-country/get-country.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import plainCountryList from '../../assets/countries.json';\n\n/**\n * Geeft de volledige lijst van landen terug in GeoJSON-formaat.\n *\n * De data is afkomstig uit een statisch JSON-bestand en wordt geretourneerd\n * als een object van het type `Countries`. Dit GeoJSON-object bevat onder\n * andere metadata en een `features`-lijst met individuele landen.\n *\n * @returns {Countries} Een GeoJSON-verzameling van alle landen.\n */\nexport function getGeoJsonCountries(): Countries {\n  return plainCountryList as Countries;\n}\n\n/**\n * Haalt alle individuele land-features op uit het GeoJSON-bestand.\n *\n * Elk land wordt weergegeven als een `Feature`-object binnen de\n * `features`-array van het GeoJSON-object. Deze functie retourneert\n * enkel die array, zonder overige metadata.\n *\n * @returns {Feature[]} Een lijst van alle landen als GeoJSON-features.\n */\nexport function getAllFeaturesOfCountries(): Feature[] {\n  return (plainCountryList as Countries).features;\n}\n\n/**\n * Haalt één willekeurig land op uit de lijst van landen (GeoJSON).\n *\n * De functie kiest willekeurig één `Feature`-object uit de lijst van landen\n * met behulp van `Math.random()` en retourneert dat object.\n * Het resultaat is een enkel land in GeoJSON-featureformaat.\n *\n * @returns {Feature} Een willekeurig gekozen land als GeoJSON-feature.\n */\nexport function getRandomCountry(): Feature {\n  const features: Feature[] = (plainCountryList as Countries).features;\n  const randomIndex: number = Math.floor(Math.random() * features.length);\n  return features[randomIndex];\n}\n\nexport interface Countries {\n  type: string;\n  name: string;\n  crs: Crs;\n  features: Feature[];\n}\n\nexport interface Crs {\n  type: string;\n  properties: Properties;\n}\n\nexport interface Properties {\n  name: string;\n}\n\nexport interface Feature {\n  type: string;\n  properties: Properties2;\n  geometry: Geometry;\n}\n\nexport interface Properties2 {\n  name: string;\n  'ISO3166-1-Alpha-3': string;\n  'ISO3166-1-Alpha-2': string;\n}\n\nexport interface Geometry {\n  type: string;\n  coordinates: number[][][];\n}\n",
+            "properties": [
+                {
+                    "name": "properties",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Properties",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 53
+                },
+                {
+                    "name": "type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 52
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "Feature",
+            "id": "interface-Feature-810a51f482e2bff9fbff67f397a353a29afd762d59d83ba583de24d4f12b4009612b0cf5b37af034336c8c144d96f019a64b50ad2000ea597727a5d1c2d375c9",
+            "file": "libs/geodata-core/src/lib/get-country/get-country.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import plainCountryList from '../../assets/countries.json';\n\n/**\n * Geeft de volledige lijst van landen terug in GeoJSON-formaat.\n *\n * De data is afkomstig uit een statisch JSON-bestand en wordt geretourneerd\n * als een object van het type `Countries`. Dit GeoJSON-object bevat onder\n * andere metadata en een `features`-lijst met individuele landen.\n *\n * @returns {Countries} Een GeoJSON-verzameling van alle landen.\n */\nexport function getGeoJsonCountries(): Countries {\n  return plainCountryList as Countries;\n}\n\n/**\n * Haalt alle individuele land-features op uit het GeoJSON-bestand.\n *\n * Elk land wordt weergegeven als een `Feature`-object binnen de\n * `features`-array van het GeoJSON-object. Deze functie retourneert\n * enkel die array, zonder overige metadata.\n *\n * @returns {Feature[]} Een lijst van alle landen als GeoJSON-features.\n */\nexport function getAllFeaturesOfCountries(): Feature[] {\n  return (plainCountryList as Countries).features;\n}\n\n/**\n * Haalt één willekeurig land op uit de lijst van landen (GeoJSON).\n *\n * De functie kiest willekeurig één `Feature`-object uit de lijst van landen\n * met behulp van `Math.random()` en retourneert dat object.\n * Het resultaat is een enkel land in GeoJSON-featureformaat.\n *\n * @returns {Feature} Een willekeurig gekozen land als GeoJSON-feature.\n */\nexport function getRandomCountry(): Feature {\n  const features: Feature[] = (plainCountryList as Countries).features;\n  const randomIndex: number = Math.floor(Math.random() * features.length);\n  return features[randomIndex];\n}\n\nexport interface Countries {\n  type: string;\n  name: string;\n  crs: Crs;\n  features: Feature[];\n}\n\nexport interface Crs {\n  type: string;\n  properties: Properties;\n}\n\nexport interface Properties {\n  name: string;\n}\n\nexport interface Feature {\n  type: string;\n  properties: Properties2;\n  geometry: Geometry;\n}\n\nexport interface Properties2 {\n  name: string;\n  'ISO3166-1-Alpha-3': string;\n  'ISO3166-1-Alpha-2': string;\n}\n\nexport interface Geometry {\n  type: string;\n  coordinates: number[][][];\n}\n",
+            "properties": [
+                {
+                    "name": "geometry",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Geometry",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 63
+                },
+                {
+                    "name": "properties",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Properties2",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 62
+                },
+                {
+                    "name": "type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 61
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "Geometry",
+            "id": "interface-Geometry-810a51f482e2bff9fbff67f397a353a29afd762d59d83ba583de24d4f12b4009612b0cf5b37af034336c8c144d96f019a64b50ad2000ea597727a5d1c2d375c9",
+            "file": "libs/geodata-core/src/lib/get-country/get-country.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import plainCountryList from '../../assets/countries.json';\n\n/**\n * Geeft de volledige lijst van landen terug in GeoJSON-formaat.\n *\n * De data is afkomstig uit een statisch JSON-bestand en wordt geretourneerd\n * als een object van het type `Countries`. Dit GeoJSON-object bevat onder\n * andere metadata en een `features`-lijst met individuele landen.\n *\n * @returns {Countries} Een GeoJSON-verzameling van alle landen.\n */\nexport function getGeoJsonCountries(): Countries {\n  return plainCountryList as Countries;\n}\n\n/**\n * Haalt alle individuele land-features op uit het GeoJSON-bestand.\n *\n * Elk land wordt weergegeven als een `Feature`-object binnen de\n * `features`-array van het GeoJSON-object. Deze functie retourneert\n * enkel die array, zonder overige metadata.\n *\n * @returns {Feature[]} Een lijst van alle landen als GeoJSON-features.\n */\nexport function getAllFeaturesOfCountries(): Feature[] {\n  return (plainCountryList as Countries).features;\n}\n\n/**\n * Haalt één willekeurig land op uit de lijst van landen (GeoJSON).\n *\n * De functie kiest willekeurig één `Feature`-object uit de lijst van landen\n * met behulp van `Math.random()` en retourneert dat object.\n * Het resultaat is een enkel land in GeoJSON-featureformaat.\n *\n * @returns {Feature} Een willekeurig gekozen land als GeoJSON-feature.\n */\nexport function getRandomCountry(): Feature {\n  const features: Feature[] = (plainCountryList as Countries).features;\n  const randomIndex: number = Math.floor(Math.random() * features.length);\n  return features[randomIndex];\n}\n\nexport interface Countries {\n  type: string;\n  name: string;\n  crs: Crs;\n  features: Feature[];\n}\n\nexport interface Crs {\n  type: string;\n  properties: Properties;\n}\n\nexport interface Properties {\n  name: string;\n}\n\nexport interface Feature {\n  type: string;\n  properties: Properties2;\n  geometry: Geometry;\n}\n\nexport interface Properties2 {\n  name: string;\n  'ISO3166-1-Alpha-3': string;\n  'ISO3166-1-Alpha-2': string;\n}\n\nexport interface Geometry {\n  type: string;\n  coordinates: number[][][];\n}\n",
+            "properties": [
+                {
+                    "name": "coordinates",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[][][]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 74
+                },
+                {
+                    "name": "type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 73
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "Properties",
+            "id": "interface-Properties-810a51f482e2bff9fbff67f397a353a29afd762d59d83ba583de24d4f12b4009612b0cf5b37af034336c8c144d96f019a64b50ad2000ea597727a5d1c2d375c9",
+            "file": "libs/geodata-core/src/lib/get-country/get-country.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import plainCountryList from '../../assets/countries.json';\n\n/**\n * Geeft de volledige lijst van landen terug in GeoJSON-formaat.\n *\n * De data is afkomstig uit een statisch JSON-bestand en wordt geretourneerd\n * als een object van het type `Countries`. Dit GeoJSON-object bevat onder\n * andere metadata en een `features`-lijst met individuele landen.\n *\n * @returns {Countries} Een GeoJSON-verzameling van alle landen.\n */\nexport function getGeoJsonCountries(): Countries {\n  return plainCountryList as Countries;\n}\n\n/**\n * Haalt alle individuele land-features op uit het GeoJSON-bestand.\n *\n * Elk land wordt weergegeven als een `Feature`-object binnen de\n * `features`-array van het GeoJSON-object. Deze functie retourneert\n * enkel die array, zonder overige metadata.\n *\n * @returns {Feature[]} Een lijst van alle landen als GeoJSON-features.\n */\nexport function getAllFeaturesOfCountries(): Feature[] {\n  return (plainCountryList as Countries).features;\n}\n\n/**\n * Haalt één willekeurig land op uit de lijst van landen (GeoJSON).\n *\n * De functie kiest willekeurig één `Feature`-object uit de lijst van landen\n * met behulp van `Math.random()` en retourneert dat object.\n * Het resultaat is een enkel land in GeoJSON-featureformaat.\n *\n * @returns {Feature} Een willekeurig gekozen land als GeoJSON-feature.\n */\nexport function getRandomCountry(): Feature {\n  const features: Feature[] = (plainCountryList as Countries).features;\n  const randomIndex: number = Math.floor(Math.random() * features.length);\n  return features[randomIndex];\n}\n\nexport interface Countries {\n  type: string;\n  name: string;\n  crs: Crs;\n  features: Feature[];\n}\n\nexport interface Crs {\n  type: string;\n  properties: Properties;\n}\n\nexport interface Properties {\n  name: string;\n}\n\nexport interface Feature {\n  type: string;\n  properties: Properties2;\n  geometry: Geometry;\n}\n\nexport interface Properties2 {\n  name: string;\n  'ISO3166-1-Alpha-3': string;\n  'ISO3166-1-Alpha-2': string;\n}\n\nexport interface Geometry {\n  type: string;\n  coordinates: number[][][];\n}\n",
+            "properties": [
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 57
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "Properties2",
+            "id": "interface-Properties2-810a51f482e2bff9fbff67f397a353a29afd762d59d83ba583de24d4f12b4009612b0cf5b37af034336c8c144d96f019a64b50ad2000ea597727a5d1c2d375c9",
+            "file": "libs/geodata-core/src/lib/get-country/get-country.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import plainCountryList from '../../assets/countries.json';\n\n/**\n * Geeft de volledige lijst van landen terug in GeoJSON-formaat.\n *\n * De data is afkomstig uit een statisch JSON-bestand en wordt geretourneerd\n * als een object van het type `Countries`. Dit GeoJSON-object bevat onder\n * andere metadata en een `features`-lijst met individuele landen.\n *\n * @returns {Countries} Een GeoJSON-verzameling van alle landen.\n */\nexport function getGeoJsonCountries(): Countries {\n  return plainCountryList as Countries;\n}\n\n/**\n * Haalt alle individuele land-features op uit het GeoJSON-bestand.\n *\n * Elk land wordt weergegeven als een `Feature`-object binnen de\n * `features`-array van het GeoJSON-object. Deze functie retourneert\n * enkel die array, zonder overige metadata.\n *\n * @returns {Feature[]} Een lijst van alle landen als GeoJSON-features.\n */\nexport function getAllFeaturesOfCountries(): Feature[] {\n  return (plainCountryList as Countries).features;\n}\n\n/**\n * Haalt één willekeurig land op uit de lijst van landen (GeoJSON).\n *\n * De functie kiest willekeurig één `Feature`-object uit de lijst van landen\n * met behulp van `Math.random()` en retourneert dat object.\n * Het resultaat is een enkel land in GeoJSON-featureformaat.\n *\n * @returns {Feature} Een willekeurig gekozen land als GeoJSON-feature.\n */\nexport function getRandomCountry(): Feature {\n  const features: Feature[] = (plainCountryList as Countries).features;\n  const randomIndex: number = Math.floor(Math.random() * features.length);\n  return features[randomIndex];\n}\n\nexport interface Countries {\n  type: string;\n  name: string;\n  crs: Crs;\n  features: Feature[];\n}\n\nexport interface Crs {\n  type: string;\n  properties: Properties;\n}\n\nexport interface Properties {\n  name: string;\n}\n\nexport interface Feature {\n  type: string;\n  properties: Properties2;\n  geometry: Geometry;\n}\n\nexport interface Properties2 {\n  name: string;\n  'ISO3166-1-Alpha-3': string;\n  'ISO3166-1-Alpha-2': string;\n}\n\nexport interface Geometry {\n  type: string;\n  coordinates: number[][][];\n}\n",
+            "properties": [
+                {
+                    "name": "ISO3166-1-Alpha-2",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 69
+                },
+                {
+                    "name": "ISO3166-1-Alpha-3",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 68
+                },
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 67
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        }
+    ],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "GeolijnTestComponent",
+            "id": "component-GeolijnTestComponent-d0fb3cea911fc9cc331fd149ff0b79982c66dc2d496fa462f569a4994a4e0397f6ac23ebea0c6657b1374e4a51a002093eac2c34918ea2a1b7d70fe44b290dbc",
+            "file": "libs/generieke-componenten/src/lib/test-component/test-component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "geolijn-test-component",
+            "styleUrls": [],
+            "styles": [
+                ""
+            ],
+            "template": "<p>\n  Test component works!\n</p>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'geolijn-test-component',\n  standalone: true,\n  imports: [],\n  template: `\n    <p>\n      Test component works!\n    </p>\n  `,\n  styles: ``\n})\nexport class GeolijnTestComponent {\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n",
+            "extends": []
+        },
+        {
+            "name": "WrapperComponent",
+            "id": "component-WrapperComponent-d71ff3b69b8edbe356801fbdc72004d79cd558c81e54ff9ffddbcaa4a077d7efa5948c3ca072cc74a1dc153dd6e0118d72ef42fda03556216c978494c8f29797",
+            "file": "libs/geodata-core/src/stories/wrapper-component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "geolijn-wrapper",
+            "styleUrls": [],
+            "styles": [
+                ""
+            ],
+            "template": "",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'geolijn-wrapper',\n  standalone: true,\n  imports: [],\n  template: ``,\n  styles: ``,\n})\nexport class WrapperComponent {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n",
+            "extends": []
+        }
+    ],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [],
+        "functions": [
+            {
+                "name": "calculateCenter",
+                "file": "libs/geodata-core/src/lib/get-center/get-center.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "coordinaten",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "returnType": "unknown",
+                "jsdoctags": [
+                    {
+                        "name": "coordinaten",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "getAllFeaturesOfCountries",
+                "file": "libs/geodata-core/src/lib/get-country/get-country.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "<p>Haalt alle individuele land-features op uit het GeoJSON-bestand.</p>\n<p>Elk land wordt weergegeven als een <code>Feature</code>-object binnen de\n<code>features</code>-array van het GeoJSON-object. Deze functie retourneert\nenkel die array, zonder overige metadata.</p>\n",
+                "args": [],
+                "returnType": "Feature[]",
+                "jsdoctags": [
+                    {
+                        "tagName": {
+                            "pos": 779,
+                            "end": 786,
+                            "kind": 80,
+                            "id": 0,
+                            "flags": 16777216,
+                            "transformFlags": 0,
+                            "escapedText": "returns"
+                        },
+                        "comment": "<p>Een lijst van alle landen als GeoJSON-features.</p>\n",
+                        "returnType": "[]"
+                    }
+                ]
+            },
+            {
+                "name": "getCenter",
+                "file": "libs/geodata-core/src/lib/get-center/get-center.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "<p>De eerste input van de functie verwacht een 2dPolygon een polygon of een multipolygon.\nOp basis van deze informatie wordt het centrum van dit vormpje geretouneerd</p>\n",
+                "args": [
+                    {
+                        "name": "coordinaten",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "returnType": "unknown",
+                "jsdoctags": [
+                    {
+                        "name": {
+                            "pos": 257,
+                            "end": 268,
+                            "kind": 80,
+                            "id": 0,
+                            "flags": 16777216,
+                            "transformFlags": 0,
+                            "escapedText": "coordinaten"
+                        },
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "pos": 251,
+                            "end": 256,
+                            "kind": 80,
+                            "id": 0,
+                            "flags": 16777216,
+                            "transformFlags": 0,
+                            "escapedText": "param"
+                        },
+                        "comment": ""
+                    }
+                ]
+            },
+            {
+                "name": "getGeoJsonCountries",
+                "file": "libs/geodata-core/src/lib/get-country/get-country.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "<p>Geeft de volledige lijst van landen terug in GeoJSON-formaat.</p>\n<p>De data is afkomstig uit een statisch JSON-bestand en wordt geretourneerd\nals een object van het type <code>Countries</code>. Dit GeoJSON-object bevat onder\nandere metadata en een <code>features</code>-lijst met individuele landen.</p>\n",
+                "args": [],
+                "returnType": "Countries",
+                "jsdoctags": [
+                    {
+                        "tagName": {
+                            "pos": 359,
+                            "end": 366,
+                            "kind": 80,
+                            "id": 0,
+                            "flags": 16777216,
+                            "transformFlags": 0,
+                            "escapedText": "returns"
+                        },
+                        "comment": "<p>Een GeoJSON-verzameling van alle landen.</p>\n",
+                        "returnType": "unknown"
+                    }
+                ]
+            },
+            {
+                "name": "getRandomCountry",
+                "file": "libs/geodata-core/src/lib/get-country/get-country.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "<p>Haalt één willekeurig land op uit de lijst van landen (GeoJSON).</p>\n<p>De functie kiest willekeurig één <code>Feature</code>-object uit de lijst van landen\nmet behulp van <code>Math.random()</code> en retourneert dat object.\nHet resultaat is een enkel land in GeoJSON-featureformaat.</p>\n",
+                "args": [],
+                "returnType": "Feature",
+                "jsdoctags": [
+                    {
+                        "tagName": {
+                            "pos": 1244,
+                            "end": 1251,
+                            "kind": 80,
+                            "id": 0,
+                            "flags": 16777216,
+                            "transformFlags": 0,
+                            "escapedText": "returns"
+                        },
+                        "comment": "<p>Een willekeurig gekozen land als GeoJSON-feature.</p>\n",
+                        "returnType": "unknown"
+                    }
+                ]
+            },
+            {
+                "name": "is2DPolygon",
+                "file": "libs/geodata-core/src/lib/type-helper.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "<p>Check of de array een 2D array is (Polygoon 2D)</p>\n",
+                "args": [
+                    {
+                        "name": "coords",
+                        "type": "Coordinaten",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "returnType": "number[][]",
+                "jsdoctags": [
+                    {
+                        "name": {
+                            "pos": 270,
+                            "end": 276,
+                            "kind": 80,
+                            "id": 0,
+                            "flags": 16777216,
+                            "transformFlags": 0,
+                            "escapedText": "coords"
+                        },
+                        "type": "Coordinaten",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "pos": 264,
+                            "end": 269,
+                            "kind": 80,
+                            "id": 0,
+                            "flags": 16777216,
+                            "transformFlags": 0,
+                            "escapedText": "param"
+                        },
+                        "comment": ""
+                    }
+                ]
+            },
+            {
+                "name": "isInsidePolygon",
+                "file": "libs/geodata-core/src/lib/is-inside-polygon/is-inside-polygon.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "<p>Deze functie bepaalt of een gegeven punt zich binnen een polygoon bevindt.\nDit wordt gedaan op basis van latitude en longitude.</p>\n<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-typescript\">const westbetuwe: number[] = [51.832066, 5.346578];\nconst netherlands: number[][] = [\n  [53.707785, 3.454509],\n  [53.707785, 7.596039],\n  [50.473985, 6.996883],\n  [50.192177, 2.834330]\n];\n\n// Resultaat: true (het punt ligt binnen de polygon)\nconst isInNederland: boolean = isInsidePolygon(westbetuwe, netherlands);</code></pre></div>",
+                "args": [
+                    {
+                        "name": "punt",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "polygoon",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "returnType": "boolean",
+                "jsdoctags": [
+                    {
+                        "name": "punt",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "polygoon",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "isMultipolygon",
+                "file": "libs/geodata-core/src/lib/type-helper.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "<p>Check of de array een 4D array is (MultiPolygon)</p>\n",
+                "args": [
+                    {
+                        "name": "coords",
+                        "type": "Coordinaten",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "returnType": "[][][]",
+                "jsdoctags": [
+                    {
+                        "name": {
+                            "pos": 836,
+                            "end": 842,
+                            "kind": 80,
+                            "id": 0,
+                            "flags": 16777216,
+                            "transformFlags": 0,
+                            "escapedText": "coords"
+                        },
+                        "type": "Coordinaten",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "pos": 830,
+                            "end": 835,
+                            "kind": 80,
+                            "id": 0,
+                            "flags": 16777216,
+                            "transformFlags": 0,
+                            "escapedText": "param"
+                        },
+                        "comment": ""
+                    }
+                ]
+            },
+            {
+                "name": "isPoint",
+                "file": "libs/geodata-core/src/lib/type-helper.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "<p>Check of de array een 1D array is (Point)</p>\n",
+                "args": [
+                    {
+                        "name": "coords",
+                        "type": "Coordinaten",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "returnType": "number[]",
+                "jsdoctags": [
+                    {
+                        "name": {
+                            "pos": 59,
+                            "end": 65,
+                            "kind": 80,
+                            "id": 0,
+                            "flags": 16777216,
+                            "transformFlags": 0,
+                            "escapedText": "coords"
+                        },
+                        "type": "Coordinaten",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "pos": 53,
+                            "end": 58,
+                            "kind": 80,
+                            "id": 0,
+                            "flags": 16777216,
+                            "transformFlags": 0,
+                            "escapedText": "param"
+                        },
+                        "comment": ""
+                    }
+                ]
+            },
+            {
+                "name": "isPolygon",
+                "file": "libs/geodata-core/src/lib/type-helper.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "<p>Check of de array een 3D array is (Polygon)</p>\n",
+                "args": [
+                    {
+                        "name": "coords",
+                        "type": "Coordinaten",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "returnType": "[][][]",
+                "jsdoctags": [
+                    {
+                        "name": {
+                            "pos": 531,
+                            "end": 537,
+                            "kind": 80,
+                            "id": 0,
+                            "flags": 16777216,
+                            "transformFlags": 0,
+                            "escapedText": "coords"
+                        },
+                        "type": "Coordinaten",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "pos": 525,
+                            "end": 530,
+                            "kind": 80,
+                            "id": 0,
+                            "flags": 16777216,
+                            "transformFlags": 0,
+                            "escapedText": "param"
+                        },
+                        "comment": ""
+                    }
+                ]
+            },
+            {
+                "name": "latitudeLongitudeCasting",
+                "file": "libs/geodata-core/src/lib/latitude-longitude-casting/latitude-longitude-casting.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "<p>Deze functie draait altijd de coordinaten om in een array van coordinaten stelsel.\nEigenlijk switched het je coordinaten van of latitude naar longitude, of longitude naar latitude</p>\n<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-typescript\">const westbetuwe: number[] = [51.83206, 5.34657];\nconst isInNederland: boolean = latitudeLongitudeCasting(westbetuwe);\n// [5.34657, 51.83206]</code></pre></div>",
+                "args": [
+                    {
+                        "name": "coordinaten",
+                        "type": "Coordinaten",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "returnType": "Coordinaten",
+                "jsdoctags": [
+                    {
+                        "name": "coordinaten",
+                        "type": "Coordinaten",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "switchCoordinates",
+                "file": "libs/geodata-core/src/lib/latitude-longitude-casting/latitude-longitude-casting.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "<p>Draait daadwerkelijk de coordinaten om</p>\n",
+                "args": [
+                    {
+                        "name": "coordinaat",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "returnType": "number[]",
+                "jsdoctags": [
+                    {
+                        "name": {
+                            "pos": 1198,
+                            "end": 1208,
+                            "kind": 80,
+                            "id": 0,
+                            "flags": 16777216,
+                            "transformFlags": 0,
+                            "escapedText": "coordinaat"
+                        },
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "pos": 1192,
+                            "end": 1197,
+                            "kind": 80,
+                            "id": 0,
+                            "flags": 16777216,
+                            "transformFlags": 0,
+                            "escapedText": "param"
+                        },
+                        "comment": ""
+                    }
+                ]
+            }
+        ],
+        "typealiases": [
+            {
+                "name": "Coordinaten",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "number[] | number[][] | [][][] | [][][]",
+                "file": "libs/geodata-core/src/lib/type-helper.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "<p>De geondersteunde coordinaat types</p>\n",
+                "kind": 193
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {},
+        "groupedFunctions": {
+            "libs/geodata-core/src/lib/get-center/get-center.ts": [
+                {
+                    "name": "calculateCenter",
+                    "file": "libs/geodata-core/src/lib/get-center/get-center.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "coordinaten",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "unknown",
+                    "jsdoctags": [
+                        {
+                            "name": "coordinaten",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getCenter",
+                    "file": "libs/geodata-core/src/lib/get-center/get-center.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "<p>De eerste input van de functie verwacht een 2dPolygon een polygon of een multipolygon.\nOp basis van deze informatie wordt het centrum van dit vormpje geretouneerd</p>\n",
+                    "args": [
+                        {
+                            "name": "coordinaten",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "unknown",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 257,
+                                "end": 268,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16777216,
+                                "transformFlags": 0,
+                                "escapedText": "coordinaten"
+                            },
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 251,
+                                "end": 256,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16777216,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": ""
+                        }
+                    ]
+                }
+            ],
+            "libs/geodata-core/src/lib/get-country/get-country.ts": [
+                {
+                    "name": "getAllFeaturesOfCountries",
+                    "file": "libs/geodata-core/src/lib/get-country/get-country.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "<p>Haalt alle individuele land-features op uit het GeoJSON-bestand.</p>\n<p>Elk land wordt weergegeven als een <code>Feature</code>-object binnen de\n<code>features</code>-array van het GeoJSON-object. Deze functie retourneert\nenkel die array, zonder overige metadata.</p>\n",
+                    "args": [],
+                    "returnType": "Feature[]",
+                    "jsdoctags": [
+                        {
+                            "tagName": {
+                                "pos": 779,
+                                "end": 786,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16777216,
+                                "transformFlags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>Een lijst van alle landen als GeoJSON-features.</p>\n",
+                            "returnType": "[]"
+                        }
+                    ]
+                },
+                {
+                    "name": "getGeoJsonCountries",
+                    "file": "libs/geodata-core/src/lib/get-country/get-country.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "<p>Geeft de volledige lijst van landen terug in GeoJSON-formaat.</p>\n<p>De data is afkomstig uit een statisch JSON-bestand en wordt geretourneerd\nals een object van het type <code>Countries</code>. Dit GeoJSON-object bevat onder\nandere metadata en een <code>features</code>-lijst met individuele landen.</p>\n",
+                    "args": [],
+                    "returnType": "Countries",
+                    "jsdoctags": [
+                        {
+                            "tagName": {
+                                "pos": 359,
+                                "end": 366,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16777216,
+                                "transformFlags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>Een GeoJSON-verzameling van alle landen.</p>\n",
+                            "returnType": "unknown"
+                        }
+                    ]
+                },
+                {
+                    "name": "getRandomCountry",
+                    "file": "libs/geodata-core/src/lib/get-country/get-country.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "<p>Haalt één willekeurig land op uit de lijst van landen (GeoJSON).</p>\n<p>De functie kiest willekeurig één <code>Feature</code>-object uit de lijst van landen\nmet behulp van <code>Math.random()</code> en retourneert dat object.\nHet resultaat is een enkel land in GeoJSON-featureformaat.</p>\n",
+                    "args": [],
+                    "returnType": "Feature",
+                    "jsdoctags": [
+                        {
+                            "tagName": {
+                                "pos": 1244,
+                                "end": 1251,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16777216,
+                                "transformFlags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>Een willekeurig gekozen land als GeoJSON-feature.</p>\n",
+                            "returnType": "unknown"
+                        }
+                    ]
+                }
+            ],
+            "libs/geodata-core/src/lib/type-helper.ts": [
+                {
+                    "name": "is2DPolygon",
+                    "file": "libs/geodata-core/src/lib/type-helper.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "<p>Check of de array een 2D array is (Polygoon 2D)</p>\n",
+                    "args": [
+                        {
+                            "name": "coords",
+                            "type": "Coordinaten",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "number[][]",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 270,
+                                "end": 276,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16777216,
+                                "transformFlags": 0,
+                                "escapedText": "coords"
+                            },
+                            "type": "Coordinaten",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 264,
+                                "end": 269,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16777216,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "isMultipolygon",
+                    "file": "libs/geodata-core/src/lib/type-helper.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "<p>Check of de array een 4D array is (MultiPolygon)</p>\n",
+                    "args": [
+                        {
+                            "name": "coords",
+                            "type": "Coordinaten",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "[][][]",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 836,
+                                "end": 842,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16777216,
+                                "transformFlags": 0,
+                                "escapedText": "coords"
+                            },
+                            "type": "Coordinaten",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 830,
+                                "end": 835,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16777216,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "isPoint",
+                    "file": "libs/geodata-core/src/lib/type-helper.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "<p>Check of de array een 1D array is (Point)</p>\n",
+                    "args": [
+                        {
+                            "name": "coords",
+                            "type": "Coordinaten",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "number[]",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 59,
+                                "end": 65,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16777216,
+                                "transformFlags": 0,
+                                "escapedText": "coords"
+                            },
+                            "type": "Coordinaten",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 53,
+                                "end": 58,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16777216,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "isPolygon",
+                    "file": "libs/geodata-core/src/lib/type-helper.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "<p>Check of de array een 3D array is (Polygon)</p>\n",
+                    "args": [
+                        {
+                            "name": "coords",
+                            "type": "Coordinaten",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "[][][]",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 531,
+                                "end": 537,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16777216,
+                                "transformFlags": 0,
+                                "escapedText": "coords"
+                            },
+                            "type": "Coordinaten",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 525,
+                                "end": 530,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16777216,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": ""
+                        }
+                    ]
+                }
+            ],
+            "libs/geodata-core/src/lib/is-inside-polygon/is-inside-polygon.ts": [
+                {
+                    "name": "isInsidePolygon",
+                    "file": "libs/geodata-core/src/lib/is-inside-polygon/is-inside-polygon.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "<p>Deze functie bepaalt of een gegeven punt zich binnen een polygoon bevindt.\nDit wordt gedaan op basis van latitude en longitude.</p>\n<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-typescript\">const westbetuwe: number[] = [51.832066, 5.346578];\nconst netherlands: number[][] = [\n  [53.707785, 3.454509],\n  [53.707785, 7.596039],\n  [50.473985, 6.996883],\n  [50.192177, 2.834330]\n];\n\n// Resultaat: true (het punt ligt binnen de polygon)\nconst isInNederland: boolean = isInsidePolygon(westbetuwe, netherlands);</code></pre></div>",
+                    "args": [
+                        {
+                            "name": "punt",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "polygoon",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "boolean",
+                    "jsdoctags": [
+                        {
+                            "name": "punt",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "polygoon",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "libs/geodata-core/src/lib/latitude-longitude-casting/latitude-longitude-casting.ts": [
+                {
+                    "name": "latitudeLongitudeCasting",
+                    "file": "libs/geodata-core/src/lib/latitude-longitude-casting/latitude-longitude-casting.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "<p>Deze functie draait altijd de coordinaten om in een array van coordinaten stelsel.\nEigenlijk switched het je coordinaten van of latitude naar longitude, of longitude naar latitude</p>\n<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-typescript\">const westbetuwe: number[] = [51.83206, 5.34657];\nconst isInNederland: boolean = latitudeLongitudeCasting(westbetuwe);\n// [5.34657, 51.83206]</code></pre></div>",
+                    "args": [
+                        {
+                            "name": "coordinaten",
+                            "type": "Coordinaten",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "Coordinaten",
+                    "jsdoctags": [
+                        {
+                            "name": "coordinaten",
+                            "type": "Coordinaten",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "switchCoordinates",
+                    "file": "libs/geodata-core/src/lib/latitude-longitude-casting/latitude-longitude-casting.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "<p>Draait daadwerkelijk de coordinaten om</p>\n",
+                    "args": [
+                        {
+                            "name": "coordinaat",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "number[]",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 1198,
+                                "end": 1208,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16777216,
+                                "transformFlags": 0,
+                                "escapedText": "coordinaat"
+                            },
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 1192,
+                                "end": 1197,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16777216,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "libs/geodata-core/src/lib/type-helper.ts": [
+                {
+                    "name": "Coordinaten",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "number[] | number[][] | [][][] | [][][]",
+                    "file": "libs/geodata-core/src/lib/type-helper.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "<p>De geondersteunde coordinaat types</p>\n",
+                    "kind": 193
+                }
+            ]
+        }
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "children": []
+    },
+    "coverage": {
+        "count": 57,
+        "status": "good",
+        "files": [
+            {
+                "filePath": "libs/geodata-core/src/lib/get-center/get-center.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "calculateCenter",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/geodata-core/src/lib/get-center/get-center.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "getCenter",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "libs/geodata-core/src/lib/get-country/get-country.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Countries",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/geodata-core/src/lib/get-country/get-country.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Crs",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/geodata-core/src/lib/get-country/get-country.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Feature",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/geodata-core/src/lib/get-country/get-country.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Geometry",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/geodata-core/src/lib/get-country/get-country.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Properties",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/geodata-core/src/lib/get-country/get-country.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Properties2",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/geodata-core/src/lib/get-country/get-country.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "getAllFeaturesOfCountries",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "libs/geodata-core/src/lib/get-country/get-country.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "getGeoJsonCountries",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "libs/geodata-core/src/lib/get-country/get-country.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "getRandomCountry",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "libs/geodata-core/src/lib/is-inside-polygon/is-inside-polygon.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "isInsidePolygon",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "libs/geodata-core/src/lib/latitude-longitude-casting/latitude-longitude-casting.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "latitudeLongitudeCasting",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "libs/geodata-core/src/lib/latitude-longitude-casting/latitude-longitude-casting.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "switchCoordinates",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "libs/geodata-core/src/lib/type-helper.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "is2DPolygon",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "libs/geodata-core/src/lib/type-helper.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "isMultipolygon",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "libs/geodata-core/src/lib/type-helper.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "isPoint",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "libs/geodata-core/src/lib/type-helper.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "isPolygon",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "libs/geodata-core/src/lib/type-helper.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Coordinaten",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "libs/geodata-core/src/stories/wrapper-component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "WrapperComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/generieke-componenten/src/lib/test-component/test-component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "GeolijnTestComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
